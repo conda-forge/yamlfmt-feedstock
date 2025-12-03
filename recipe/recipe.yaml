@@ -1,12 +1,14 @@
-{% set name = "yamlfmt" %}
-{% set version = "0.20.0" %}
+schema_version: 1
+
+context:
+  version: 0.20.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: yamlfmt
+  version: ${{ version }}
 
 source:
-  url: https://github.com/google/yamlfmt/archive/v{{ version }}.tar.gz
+  url: https://github.com/google/yamlfmt/archive/v${{ version }}.tar.gz
   sha256: de6bc4373ba46c520d936dd4b60395868ec17aba338b9fd849594c1f41b6c057
 
 build:
@@ -14,21 +16,21 @@ build:
 
 requirements:
   build:
-    - {{ compiler('go-nocgo') }}
+    - ${{ compiler('go-nocgo') }}
     - go-licenses
 
-test:
-  commands:
-    - yamlfmt --help
+tests:
+  - script:
+      - yamlfmt --help
 
 about:
-  home: https://github.com/google/yamlfmt
   license: Apache-2.0
   license_file:
     - LICENSE
     - license-files/
   summary: An extensible command line tool or library to format yaml files
-  dev_url: https://github.com/google/yamlfmt
+  homepage: https://github.com/google/yamlfmt
+  repository: https://github.com/google/yamlfmt
 
 extra:
   recipe-maintainers:
