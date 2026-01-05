@@ -5,7 +5,7 @@
 
 [workspace]
 name = "yamlfmt-feedstock"
-version = "3.53.3"  # conda-smithy version used to generate this file
+version = "3.54.1"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/yamlfmt-feedstock"
 authors = ["@conda-forge/yamlfmt"]
 channels = ["conda-forge"]
